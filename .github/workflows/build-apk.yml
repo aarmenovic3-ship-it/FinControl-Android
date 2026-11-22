@@ -16,10 +16,11 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
-      - name: Install Android SDK components
+      - name: Check Android SDK
         run: |
-          echo "y" | sdkmanager --licenses >/dev/null || true
-          sdkmanager "platforms;android-35" "build-tools;35.0.0"
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          ls -la "$ANDROID_HOME" || true
+          find "$ANDROID_HOME" -name sdkmanager -type f | head -5 || true
       - name: Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
