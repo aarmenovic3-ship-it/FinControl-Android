@@ -93,7 +93,7 @@ public class MainActivity extends Activity {
     LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(-1,dp(1));lp.topMargin=dp(13);lp.bottomMargin=dp(13);p.addView(v,lp);
   }
   private Button button(String name, final Runnable r, boolean primary){
-    Button b=new Button(this);b.setText(name);b.setTextAllCaps(false);b.setTextSize(13);
+    Button b=new Button(this);b.setText(name);b.setAllCaps(false);b.setTextSize(13);
     b.setTextColor(primary?0xff122b22:WHITE);b.setBackground(bg(primary?MINT:PANEL2,13));
     b.setOnClickListener(v->r.run());return b;
   }
